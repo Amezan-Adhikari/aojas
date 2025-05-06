@@ -46,6 +46,7 @@ export default function Hero() {
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
         const newData: DataPoint[] = await response.json();
+        console.log("Fetched Data:", newData);
         processData(newData);
         setLoading(false);
         return newData;
